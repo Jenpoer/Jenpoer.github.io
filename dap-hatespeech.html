@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio | Hate Speech Detection Chat Bot</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/484a923a64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><i class="fas fab fa-home"></i></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarLinks"
+            aria-controls="navbarLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i
+                class="fas fa-bars"
+                style="color: #BF7154; font-size: 28px"
+              ></i>
+            </span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarLinks"
+          >
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-me.html">about me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#works">works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact-me">contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="hero-img"
+      style="--src: url('../img/telegram_bot.png'); --bg-x: 50%; --bg-y: 50%"
+    ></div>
+    <div class="d-flex align-items-center py-5 flex-column">
+      <h1 class="text-center">Hate Speech Detection Chat Bot</h1>
+      <p style="color: white">SMUBIA Data Associate Project 2021</p>
+    </div>
+    <div class="container timeline">
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Background</h2>
+          <p class="text">
+            <b>Data Associate Programme (DAP)</b> is
+            <b>SMU Business Intelligence and Analytics (BIA)</b> club's annual
+            flagship program. It runs for a duration of 12 weeks, where data
+            associates will participate in weekly co-learning sessions
+            (presented in groups) and embark on a term-long project on data
+            science and analytics. I was part of the 2021 cohort of BIA DAP. My
+            team's project was creating a hate speech detection chatbot using
+            natural language processing and machine learning with Python.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Problem Statement</h2>
+          <p class="text">
+            With the democratization of free speech in social media, derogatory
+            remarks (<b>hate speech</b>) targeted towards certain individuals /
+            group of individuals become more <b>prevalent</b>. Under the comfort
+            of anonimity, people are able to post offensive comments online
+            without fear of direct repercussion. As such, we felt that measures
+            to detect and inhibit these actions are important to regulate peace
+            in the cyberspace. Therefore, we wanted to explore the use of
+            natural language processing and sentiment analysis to detect hate
+            speech and curb this threat.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Exploratory Data Analysis</h2>
+          <p class="text">
+            The dataset that we used is
+            <a href="https://sites.google.com/site/offensevalsharedtask/olid"
+              >OLID v1.0</a
+            >, which is a collection of 14200 annotated English tweets. It is
+            divided into 3 subtasks: the first labelling tweets as "offensive"
+            and "non-offensive", the second labelling offensive tweets as
+            "targeted" or "untargeted", and the third labelling targeted
+            offensive posts as targeted towards "individuals", "groups", or
+            "others". This dataset was used in <b>OffensEval 2019</b>.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Data Pre-processing</h2>
+          <div class="text">
+            <p>
+              Data pre-processing is perhaps one of the most crucial things in
+              natural language processing. The steps we took were as such:
+            </p>
+            <ol>
+              <li>
+                <b>Label Encoding</b>
+                <p>
+                  Focusing on subtask B (that is, the data annotated with
+                  "targeted" or "untargeted"), we encoded targeted insults as 1
+                  and untargeted insults/non-offensive tweets as 0.
+                </p>
+              </li>
+              <li>
+                <b>Text Cleaning</b>
+                <p>
+                  In order to be able to do proper feature extraction to feed
+                  into our machine learning model, we needed to convert the text
+                  into a cleaner form that can be easily vectorized later on. We
+                  removed emojis, replaced special characters (such as
+                  ampersand), remove tagged users, removed numbers, removed
+                  punctuations, broke attached words (as best as we could),
+                  converted everything to lowercase, removed contractions, and
+                  turned all text into alphanumeric format.
+                </p>
+              </li>
+              <li>
+                <b>Removing stopwords</b>
+                <p>
+                  Stopwords are common words like 'the', 'I', etc. that do not
+                  add much value to the context of the sentence. As such, to let
+                  the model give more focus to the important information, we
+                  decided to remove them. As there is no universal list of
+                  stopwords, we used the NLTK library's stopwords corpus.
+                </p>
+              </li>
+              <li>
+                <b>Lemmatization</b>
+                <p>
+                  Lemmatization is the act of converting words into their base
+                  words while retaining the context (as opposed to stemming,
+                  where it simply arbitrarily cuts off common
+                  prefixes/suffixes). We felt that the context of the root words
+                  are important in the identification of hate speech, thus we
+                  decided to opt for lemmatization instead of stemming.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>P1. Traditional Machine Learning</h2>
+          <div class="text">
+            <p>
+              Initially, we tried to use traditional statistical machine
+              learning models (e.g. SVM, Naive Bayes classifier). However, first
+              we had to convert our text data into numerical vector
+              representations in order for the models to be able to be trained.
+              We tried two different modes of sparse matrix representations:
+              "Bag of Words" and "TF-IDF". We also tried unigram and bigram for
+              both representations.
+            </p>
+            <p>
+              Afterwards, we trained three different models on those four
+              representations: Support Vector Machine (SVM), Naive Bayes
+              classifier (Gaussian and Multinomial), and Logistic Regression.
+            </p>
+            <p>
+              We attained the best results with Multinomial Naive Bayes with
+              unigram BoW, SVM with unigram BoW, and Logistic Regression with
+              unigram BoW. However, the metrics were still unsatisfactory, so we
+              attempted to get better results by balancing the data (using
+              random over-sampling) and hyperparameter tuning.
+            </p>
+            <p>
+              <a
+                href="https://colab.research.google.com/drive/13LU6-0tK1v73IC6_4csaCaTTmCfaWWcI?usp=sharing"
+                >Link to Jupyter Notebook</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>P2. Neural Networks</h2>
+          <div class="text">
+            <p>
+              We still felt unsatisfied by the performance of our traditional ML
+              models despite all our efforts to increase its performance. Upon
+              reflection, we came to the conclusion that detecting hate speech
+              is a complex task. Thus, we felt that it might call for more
+              sophisticated methods.
+            </p>
+            <p>
+              We attempted to explore dense word embedding representations. We
+              settled on using an imported pre-trained Twitter GloVe embeddings
+              with 50 dimensions.
+            </p>
+            <p>
+              We trained recurrent neural networks using Tensorflow Keras with
+              LSTM and GRU. Afterwards, we did some hyperparameter tuning with
+              Bayesian optimization. In the end, we came up with some results
+              that we could be satisfied with.
+            </p>
+            <p>
+              <a
+                href="https://colab.research.google.com/drive/1msxL05mZmnmqYLJTuvlgTzpfAJfpAIuP?usp=sharing"
+                >Link to Jupyter Notebook</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Deployment</h2>
+          <div class="text">
+            <p>
+              We deployed our model in the form of a Telegram bot. It is live at
+              <b>@dap_hate_speech_detection_bot</b>!
+            </p>
+            <br />
+            <p>
+              <a href="https://github.com/Jenpoer/pythoneers-hatespeech-bot"
+                >Link to Github Repo</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Reflection</h2>
+          <div class="text">
+            <p>
+              In retrospect, I identified several flaws with the outcome of our
+              project. This is partially because of the dataset that we chose.
+              We noticed that a majority of the context pertains to political
+              issues. However, this context did not really fit our goal of
+              detecting hate speech in general. We also struggled a lot with our
+              model performance, debugging, and deployment issues.
+            </p>
+            <br />
+            <p>
+              However, I think that despite all these problems, the experience
+              was a very rewarding one. Doing this project alowed me to acquire
+              technical knowledge in NLP and neural networks. Having to balance
+              my commitments between this program and schoolwork, I certainly
+              improved my time management skills. Most importantly, it was a fun
+              experience to work on with a group of like-minded data
+              enthusiasts. I am excited to embark on more data science projects
+              in the future!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/timeline.js"></script>
+  </body>
+</html>

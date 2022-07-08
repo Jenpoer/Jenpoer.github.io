@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio | Buylettin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/484a923a64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><i class="fas fab fa-home"></i></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarLinks"
+            aria-controls="navbarLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i
+                class="fas fa-bars"
+                style="color: #BF7154; font-size: 28px"
+              ></i>
+            </span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarLinks"
+          >
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-me.html">about me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#works">works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact-me">contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="hero-img"
+      style="--src: url('../img/buylettin.png'); --bg-x: 50%; --bg-y: 20%"
+    ></div>
+    <div class="d-flex align-items-center py-5 flex-column">
+      <h1>Buylettin</h1>
+      <p style="color: white">Build On, ASEAN 2021 Finalist</p>
+    </div>
+    <div class="container timeline">
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Background</h2>
+          <p class="text">
+            <b>Build On, ASEAN 2021</b> is a competitive hackathon hosted by
+            <b>Amazon Web Services (AWS)</b> that challenges students to create
+            and innovate technological solutions to address challenge statements
+            faced by the sponsors. My team decided to take on the challenge
+            statement proposed by Carousell, which is "how might we encourage
+            more people to buy and sell pre-owned items?". The competition
+            consisted of two stages: a proposal submission stage and a final
+            presentation for shortlisted proposals. Our proposal was shortlisted
+            and we were given two weeks to create a prototype of our solution.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Problem Statement</h2>
+          <p class="text">
+            The challenge statement we chose to address is
+            <b
+              >"how might we encourage more people to buy and sell pre-owned
+              items?"</b
+            >. We felt that current secondhand C2C e-commerce marketplaces are
+            largely one-sided and comes with various inconveniences that makes
+            it a hassle for both buyers and sellers, thus turning them away from
+            engaging in buying and selling secondhand products. Sellers may be
+            hesitant to sell their items as they are unsure of the demand of
+            such an item, while buyers are only limited to the items that
+            sellers have posted on the platform. It is important to encourage
+            the exchange of pre-owned items as it contributes to waste reduction
+            and promotes local economic growth.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Solution Overview</h2>
+          <p class="text">
+            Our proposed platform, <b>Buylettin</b>, introduces a
+            <b>Buyer's Listing / Request Board</b> feature where buyers can list
+            the items that they are looking to buy. With this request board,
+            users can list items of interest and the description of the criteria
+            that they are looking for. Keeping the traditional seller-side
+            listings as well, a <b>recommendation system</b> that takes into
+            consideration the similarity of listing keywords and user
+            interactions will be utilized to connect both sides. Sellers will be
+            recommended buyers' listings that are similar to an item that they
+            have posted, and buyers will be recommended sellers' listings that
+            are similar to the requests that they have put up. That way, C2C
+            e-commerce becomes a <b>two-way process</b>: buyers do not
+            necessarily have to be limited by listings that are already
+            available and sellers are able to actively search for buyers.
+            <br />
+            <br />
+            In addition, we have a <b>public QnA system</b>, where buyers can
+            post questions about a product that is being sold, the answers to
+            which will be made public. Buyers can also indicate questions on
+            their request listings that they would like all sellers to answer
+            when proposing a deal to them. This feature helps to streamline
+            communication and minimize unnecessary repetitions of information
+            between buyers and sellers.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Market Research</h2>
+          <p class="text">
+            Buyer listings are already a feature of several other C2C e-commerce
+            platforms, such as <b>Carousell</b>, <b>Gumtree</b>, and other
+            online classifieds platforms. However, those features are usually
+            sidelined and sometimes jumbled, with multiple categories being
+            mixed together. We believe that by giving this feature more
+            emphasis, we can fully utilize the idea of letting potential
+            suppliers be aware of the presence of a demand to start drawing them
+            into the market. We would also like to augment our solution with a
+            specific recommendation system that is tailored specifically to it.
+            Moreover, because this is already a familiar concept to users, it is
+            easier for users to adopt, bypassing the general consumers'
+            resistance to change.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Prototype</h2>
+          <p class="text">
+            For this competition, we created a
+            <b>functional prototype</b> deployed on <b>Amazon Cloud</b>. My role
+            in this project was primarily full-stack development, though I was
+            also in charge of DevOps. The frontend was coded using
+            <b>React.js</b> and the backend was coded using <b>Spring Boot</b>.
+            <br />
+            <br />
+            We deployed the prototype as a simple web application, using Amazon
+            Elastic Beanstalk to help us set up the backend environment and
+            deploying the frontend application as a static web in Amazon S3. We
+            hosted our MySQL database in Amazon RDS. We also utilized Amazon
+            Personalize for the recommendation system that aims to connect
+            seller listings with buyer listings. Although this architecture is
+            simple, we felt that it is sufficient for a prototype.
+          </p>
+          <img
+            src="img/buylettin_architecture_diagram.png"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Demo</h2>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Kw7XWziG3Dc"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Results</h2>
+          <p class="text">
+            Although we were shortlisted into the finals stage, we unfortunately
+            did not win any prize. Upon reflecting upon this, I came to the
+            conclusion that we were too focused on the engineering of the
+            prototype that we failed to flesh out our idea, leading to the
+            foundation upon which we built our product to be faulty. We spent
+            most of our time trying to create a fully functional prototype,
+            instead of simply creating just enough to showcase our features and
+            better refine the idea behind it. As such, we were lacking in terms
+            of solution impact and business viability, such as monetization.
+            Apart from that, we had taken a very detached approach to the
+            ideation of our product, failing to conduct enough primary research
+            and empathizing with the would-be users of the product. However,
+            these failings are a reward in its own right. Learning from my
+            mistakes and the successes of the other teams, I am determined to go
+            on to improve in my next endeavour!
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/timeline.js"></script>
+  </body>
+</html>
