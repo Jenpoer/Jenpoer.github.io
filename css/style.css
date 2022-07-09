@@ -19,6 +19,11 @@ nav {
   transition: opacity 0.5s ease 0s;
 }
 
+.navbar-toggler-icon {
+  color: #fff;
+  font-size: 28px;
+}
+
 .nav-item {
   display: block;
   margin-right: 31px;
@@ -41,12 +46,8 @@ nav {
   transition: color 150ms ease;
 }
 
-.nav-link.active, .navbar-brand.active {
+.nav-link.active, .navbar-brand.active, .nav-link:hover, .navbar-brand:hover {
   color: #bf7154;
-}
-
-.nav-link:hover, .navbar-brand:hover {
-  color: #bd6955;
 }
 
 .section {
