@@ -79,11 +79,11 @@ function sectionDeviceOrientation(event) {
   y += 90;
 
   image1.style.transform = `translateX(${
-    x / translateSettings.image1Scale
-  }%) translateY(${y / translateSettings.image1Scale}%)`;
+    (x / 180) * (translateSettings.image1Scale / 100)
+  }%) translateY(${(y / 180) * (translateSettings.image1Scale / 100)}%)`;
   image2.style.transform = `translateX(${
-    x / translateSettings.image2Scale
-  }%) translateY(${y / translateSettings.image2Scale}%)`;
+    (x / 180) * (translateSettings.image2Scale / 100)
+  }%) translateY(${(y / 180) * (translateSettings.image2Scale / 100)}%)`;
 }
 
 function sectionMouseLeave(event) {
