@@ -17,13 +17,13 @@ window.addEventListener(
     section.removeEventListener("mouseenter", sectionMouseEnter);
     section.removeEventListener("mousemove", sectionMouseMove);
     section.removeEventListener("mouseleave", sectionMouseLeave);
-    section.removeEventListener("deviceorientation", sectionDeviceOrientation);
+    window.removeEventListener("deviceorientation", sectionDeviceOrientation);
     if (viewportWidth >= 768) {
       section.addEventListener("mouseenter", sectionMouseEnter);
       section.addEventListener("mousemove", sectionMouseMove);
       section.addEventListener("mouseleave", sectionMouseLeave);
     } else {
-      section.addEventListener("deviceorientation", sectionDeviceOrientation);
+      window.addEventListener("deviceorientation", sectionDeviceOrientation);
     }
   },
   false
@@ -43,7 +43,7 @@ if (viewportWidth >= 768) {
   section.addEventListener("mousemove", sectionMouseMove);
   section.addEventListener("mouseleave", sectionMouseLeave);
 } else {
-  section.addEventListener("deviceorientation", sectionDeviceOrientation);
+  window.addEventListener("deviceorientation", sectionDeviceOrientation);
 }
 
 function sectionMouseEnter(event) {
