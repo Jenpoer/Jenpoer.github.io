@@ -80,10 +80,10 @@ function sectionDeviceOrientation(event) {
 
   image1.style.transform = `translateX(${
     (x / 180) * (translateSettings.image1Scale / 100)
-  }%) translateY(${(y / 180) * (translateSettings.image1Scale / 100)}%)`;
+  }px) translateY(${(y / 180) * (translateSettings.image1Scale / 100)}px)`;
   image2.style.transform = `translateX(${
     (x / 180) * (translateSettings.image2Scale / 100)
-  }%) translateY(${(y / 180) * (translateSettings.image2Scale / 100)}%)`;
+  }px) translateY(${(y / 180) * (translateSettings.image2Scale / 100)}px)`;
 }
 
 function sectionMouseLeave(event) {
