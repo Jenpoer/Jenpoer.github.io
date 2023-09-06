@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio | Spend Transaction</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/484a923a64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><i class="fa fa-house"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarLinks"
+            aria-controls="navbarLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i class="fa fa-bars"></i>
+            </span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarLinks"
+          >
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-me.html">about me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#works">works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact-me">contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="hero-img"
+      style="
+        --src: url('../img/ascenda_waftech_mockup.png');
+        --bg-x: 50%;
+        --bg-y: 50%;
+      "
+    ></div>
+    <div class="d-flex align-items-center py-5 flex-column">
+      <h1>Waftech Spend Transaction Platform</h1>
+      <p style="color: white">SMU CS301 2022 Project sponsored by Ascenda</p>
+    </div>
+    <div class="container timeline">
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Background</h2>
+          <p class="text">
+            <b>Waftech Spend Transaction Platform</b> is created for SMU's CS301
+            IT Solution Architecture course. The project was designed to solve
+            the problem statement given by the project's sponsor,
+            <b>Ascenda</b>, which is to create a turn-key solution for banks to
+            process loyalty points for their customers across a variety of card
+            programs. The platform should also be flexible enough for users to
+            launch new programs and campaigns. The main focus of this project is
+            to design the platform's architecture in such a way that it can
+            <b
+              >efficiently and reliably process large amounts of transactions
+              data</b
+            >
+            coming in daily.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Project Requirements</h2>
+          <div class="text">
+            <p>There are four main functional requirements of the platform:</p>
+            <ol>
+              <li>
+                <b>Earn processing</b>
+                <p>
+                  The platform should be able to batch process CSV files
+                  containing transaction data of customers with around 1 million
+                  records daily. Additionally, it should also expose an API
+                  endpoint to accept transactions data, and be able to process
+                  700 requests / minute. Afterwards, it should reflect the
+                  rewards earned by the customers based on existing campaigns.
+                </p>
+              </li>
+              <li>
+                <b>Card & User Groups</b>
+                <p>
+                  Customers should be able to have multiple cards. These cards
+                  can be classified into groups with different reward policies
+                  configured.
+                </p>
+              </li>
+              <li>
+                <b>Campaigns</b>
+                <p>
+                  Bank administrators should be able to create new promotional
+                  campaigns with very quick turnarounds. When a customer
+                  fulfills a campaign, they should get a notification of their
+                  rewards and be able to see it reflected on the platform.
+                </p>
+              </li>
+              <li>
+                <b>Exclusions</b>
+                <p>
+                  Due to special agreements with certain merchants or competing
+                  card programs, there are policies in place to exclude certain
+                  types of transactions from rewards processing. The platform
+                  must be able to accommodate these policies, as well as provide
+                  the administrators with the option to create new exclusion
+                  policies.
+                </p>
+              </li>
+            </ol>
+          </div>
+          <br />
+          <p class="text">
+            Aside from these functional requirements, the application must be
+            able to <b>quickly</b> process large amounts of data in a short
+            amount of time, <b>scale</b> according to traffic (i.e. scale up
+            when application is in heavy use, scale down to save resources
+            during periods of low traffic), be <b>easily maintainable</b>, store
+            information <b>securely</b>, and be <b>highly available</b> even in
+            the event of unforeseen disasters, such as servers or data centers
+            shutting down. Additionally, the solution should be built with a
+            realistic budget in mind.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Solution Overview</h2>
+          <p class="text">
+            For this course, we are expected to use
+            <b>Amazon Web Services (AWS)</b> for our project's architecture. As
+            such, we decided to leverage AWS's <b>serverless</b> services
+            because of its cost-efficiency for intermittent traffic and managed
+            auto-scaling capabilities.
+          </p>
+          <img
+            src="img/ascenda_waftech_full_architecture.png"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Performance Design</h2>
+          <p class="text">
+            To meet the speed and scalability requirements of the project, we
+            hosted our entire backend on <b>Amazon Lambda functions</b>, which
+            allows for concurrent invocations to serve multiple requests at
+            once. Additionally, we used a <b>Step Function</b> to allow Lambda
+            to process a large CSV file by dividing it into smaller chunks and
+            looping the Lambda runtime. To allow files and API calls to be
+            processed simultaneously, we used <b>Amazon SQS</b> to allow the
+            lambda functions to communicate asynchronously with each other.
+            <br />
+            <br />
+            Our design allows <b>1,434,134 records</b> to be read under
+            <b>8 minutes</b>, then processed and saved into the database in
+            under <b>12 minutes</b>.
+          </p>
+          <img src="img/ascenda_waftech_performance.png" style="width: 100%" />
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Availability Design</h2>
+          <p class="text">
+            To ensure that the platform is always available and can recover from
+            disasters easily, we designed it in a way that ensures both
+            <b>regional</b> and <b>multi-region</b> availability. One of the
+            advantages of using serverless services is that most of the regional
+            availability is managed by AWS. Lambda functions are automatically
+            deployed by AWS in multiple availability zones. Our data is stored
+            in DynamoDB, which is automatically replicated across 3 availability
+            zones, and S3, which has four 9s of availability guaranteed.
+            <br />
+            <br />
+            Multi-region availability requires a bit more configuration on our
+            part. We deployed two identical sets of our architecture across two
+            regions: Singapore (primary) and North Virginia (secondary). The
+            secondary region's resources remain idle, so they do not incur
+            additional costs when not in use. In the event of an entire region's
+            unavailability, we have set up <b>DNS failover</b> using
+            <b>Route 53</b> so that traffic will be redirected to the secondary
+            region. The average time taken for recovery is
+            <b>3 minutes 42 seconds</b>, which is well under the sponsor's RTO
+            of 1 hour.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Maintainability Design</h2>
+          <p class="text">
+            To ensure ease of maintenance, we designed the application as
+            <b>microservices</b>, so that the components are decoupled and
+            developers can work on each of them separately. We also used
+            <b>Terraform</b>, an infrastructure-as-code tool, so that the team
+            can easily review and make changes to the architecture. As the
+            repository is hosted on Github, we implemented a CI/CD pipeline on
+            <b>Github Actions</b> for each code push.
+          </p>
+          <img
+            src="img/ascenda_waftech_maintainability.png"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Security Design</h2>
+          <p class="text">
+            We implemented <b>DNSSEC</b> on Route 53 to guard against DNS
+            spoofing and prevent users from being redirected to malicious mirror
+            sites that seek to steal their information. Additionally, we
+            leverage AWS's existing security measures (e.g. IAM, encryption) on
+            all our services. <b>Amazon Cognito</b> is used for user
+            authentication. We also set up monitoring such as <b>Tfsec</b> and
+            <b>CloudTrail</b> to analyze and detect potential vulnerabilities in
+            the application.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Conclusions</h2>
+          <p class="text">
+            I have dabbled in AWS services several times before this project,
+            but this is my first foray into designing a fully-fledged system
+            based on performance and availability requirements. It really opened
+            my eyes to the workings of Cloud technology and what it means to be
+            a solution architect. There are a lot of things to take into
+            consideration when designing a system outside of functional
+            requirements, and finding ways to meet requirements while also being
+            optimal with costs was a challenge. However, this project has piqued
+            my interest in learning more about Cloud technology, and I would
+            like to delve deeper into the capabilities of AWS as well as those
+            of other cloud providers.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/timeline.js"></script>
+  </body>
+</html>
