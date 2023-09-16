@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio | FINE</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/484a923a64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><i class="fa fa-house"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarLinks"
+            aria-controls="navbarLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i class="fa fa-bars"></i>
+            </span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarLinks"
+          >
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-me.html">about me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#works">works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact-me">contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="hero-img"
+      style="--src: url('../img/FINE_mockup.png'); --bg-x: 50%; --bg-y: 20%"
+    ></div>
+    <div class="d-flex align-items-center py-5 flex-column">
+      <h1>FINE: Fire INcidents Explorer</h1>
+      <p style="color: white">SMU IS415 2023 Project</p>
+    </div>
+    <div class="container timeline">
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Background</h2>
+          <p class="text">
+            Singapore experienced severe haze from 2015 to 2019 due to
+            Indonesian forest fires, especially in Sumatra and Kalimantan.
+            However, recent years have seen a decrease in haze, which sparked my
+            team's interest to investigating these occurrences. In SMU's
+            <b>IS415 Geospatial Analytics and Applications</b>, we learned how
+            to use <b>R</b> to perform geospatial analytics. However, this
+            method is not easily accessible to people without coding experience.
+            Hence, we created <b>FINE: Fire INcidents Explorer</b>, an
+            <b>R Shiny</b> web application that aims to allow users to perform
+            spatial point patterns analysis on these occurrences through an
+            intuitive user interface.
+            <br />
+            <br />
+            Using R Quarto, we created a project website that outlines its
+            features in greater detail, as well as a user guide for using the
+            application. You can view via
+            <a href="https://is415-fire-incidents-explorer.netlify.app/"
+              >this link</a
+            >!
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Features</h2>
+          <div class="text">
+            <p>There are four key features to the application.</p>
+            <ol>
+              <li>
+                <b>Exploratory Data Analysis:</b> Users can view an interactive
+                point map of specific forest fire hotspots and filter them based
+                on certain conditions, as well as time series charts that
+                aggregates these points by time.
+              </li>
+              <li>
+                <b>Kernel Density Estimation Map:</b> Users are able to conduct
+                first-order spatial point patterns analysis by viewing kernel
+                density estimation maps of forest fire hotspots.
+              </li>
+              <li>
+                <b>Spatial Cluster Analysis:</b> Users are able to conduct
+                second-order spatial point patterns analysis to identify and
+                statistically confirm possible interactions between events. This
+                is done by conducting Monte-Carlo simulations to test for
+                Complete Spatial Randomness (CSR), i.e. whether or not events in
+                a given region are independently distributed and the number of
+                events follows a homogenous Poisson distribution.
+              </li>
+              <li>
+                <b>Spatiotemporal Analysis:</b> Users are able to conduct
+                spatiotemporal analysis at point level and at area level. For
+                point-level analysis, users can compute the space-time
+                K-function for a specific sub-district in a specific year and
+                view either a contour plot, image plot, or perspective plot of
+                the results. For area-level analysis, users are able to view
+                choropleth maps of aggregated fire hotspot data by sub-district,
+                as well as identify changes in spatial hot spots and cold spots
+                over time.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Web Application</h2>
+          <p class="text">
+            <a
+              href="https://jenpoer.shinyapps.io/is415-fire-incidents-explorer/"
+              >Click here</a
+            >
+            to access the web application!
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Conclusions</h2>
+          <p class="text">
+            The biggest takeaway from this project and the course as a whole is
+            the knowledge of how to use R to perform data analysis and how to
+            deal with geospatial data. Geospatial data has an added dimension to
+            it that makes processing it slightly different from the typical
+            tabular data that I was used to handling. But just as geospatial
+            data requires additional steps to process, they also yield
+            additional insights, and they can be used in conjunction with
+            tabular data.
+            <br />
+            <br />
+            <a href="https://jenpoer-is415-gaa-exercises.netlify.app/"
+              >This Quarto website</a
+            >
+            is a compilation of the exercises I have done throughout the course,
+            outlining the various techniques that can be applied to geospatial
+            data.
+            <br />
+            <br />
+            Although there were some challenges that came with having to learn a
+            new language over the span of 3 months, I believe that learning R
+            and geospatial data analytics was a very rewarding experience. In
+            fact, I have managed to apply what I have learned in this course for
+            my project in another course, where I created an agent-based
+            simulation of the change in polar bear population in Hudson Bay. The
+            techniques I learned in this course was useful to aggregate data in
+            the area of interest, as well as to process that data to be imported
+            into NetLogo.
+          </p>
+          <img src="img/netlogo_hudson_bay.png" style="width: 100%" />
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/timeline.js"></script>
+  </body>
+</html>

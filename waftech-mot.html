@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio | Waftech MOT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/484a923a64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><i class="fa fa-house"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarLinks"
+            aria-controls="navbarLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i class="fa fa-bars"></i>
+            </span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarLinks"
+          >
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-me.html">about me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#works">works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact-me">contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="hero-img"
+      style="--src: url('../img/waftech_mot.gif'); --bg-x: 50%; --bg-y: 55%"
+    ></div>
+    <div class="d-flex align-items-center py-5 flex-column">
+      <h1>MC OCR Tool</h1>
+      <p style="color: white">
+        SMU Final Year Project sponsored by GrabRentals
+      </p>
+    </div>
+    <div class="container timeline">
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Background</h2>
+          <p class="text">
+            Our sponsor, GrabRentals, rents out vehicles to drivers for private
+            hire and driving for Grab. However, when covered by a valid Medical
+            Certificate (MC) and unable to drive, GrabRentals allows for the
+            waiving of rental fees. Due to GrabRentals' growing fleet of rental
+            vehicles and drivers, there is an increasing number of MCs to
+            process each day. Hence, for our final year project, we created
+            <b>Waftech MC OCR Tool</b> for our sponsor. The project aims to
+            automate GrabRentals' medical leave and rental fee waiving process
+            without completely disrupting their existing workflow.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Solution Overview</h2>
+          <p class="text">
+            <b>Waftech MOT</b> is an OCR tool that automatically extracts
+            necessary information from submitted MCs, verifies them against
+            expected data, and writes the results onto the Google Sheets used in
+            the existing process. Under the hood, it leverages the
+            <a href="https://arxiv.org/abs/1912.13318">LayoutLM</a> model
+            available through the HuggingFace repository, which is fine-tuned on
+            MC data provided by GrabRentals to perform better on the Singapore
+            MC format. In addition to the <b>main MC processing module</b>,
+            Waftech MOT comes with an <b>active learning pipeline</b> that
+            allows the GrabRentals team to re-train the underlying model should
+            they wish to improve its performance / keep it up to date with
+            potential changes in the MC format. The entire solution is deployed
+            on GrabRentals's <b>AWS environment</b>.
+            <br />
+            <br />
+            Our solution aims to promote scalability of their services, whilst
+            reducing weekly hours in the task of processing MCs. Using our
+            solution, we hope to help GrabRentals' operations team
+            <b>reduce their weekly MC processing time</b> from 2-10 hours to
+            under an hour.
+          </p>
+          <img src="img/mot_overview.png" style="width: 100%" />
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>MC Processing Architecture</h2>
+          <p class="text">
+            The MC Processing Module of Waftech MOT consists of three steps:
+            pre-processing, information extraction, and verification. They are
+            deployed as different microservices using <b>Docker</b> and
+            <b>Amazon Elastic Container Service (ECS)</b> to promote loose
+            coupling and enable us to independently develop and troubleshoot
+            issues.
+            <br />
+            <br />
+            The <b>pre-processing</b> service uses computer vision Python
+            libraries such as <b>cv2</b> and <b>Pillow</b> to perform image
+            rotation, shadow removal, and binarization. Afterwards, the
+            pre-processed image is saved into an <b>S3 bucket</b> and sent into
+            a <b>classifier</b> that will classify it into either an MC or
+            another document. Other documents will be immediately flagged as
+            invalid and will not proceed to the next step.
+            <br />
+            <br />
+            The <b>information extraction</b> service uses LayoutLM to parse the
+            pre-processed document and extract the corresponding fields. This
+            information is then sent into the verification service.
+            <br />
+            <br />
+            The <b>verification</b> service checks the clinic name against a
+            database of registered clinics in Singapore, which was scraped from
+            a legitimate database and stored into <b>Amazon RDS</b>.
+            <br />
+            <br />
+            Afterwards, all the information is written into Google Sheets for
+            the operations team to check.
+          </p>
+          <img src="img/mot_processing_architecture.png" style="width: 100%" />
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Active Learning Architecture</h2>
+          <p class="text">
+            For active learning, we hosted an open-source data labelling tool
+            called <a href="https://labelstud.io/">Label Studio</a> and an
+            open-source model registry called
+            <a href="https://mlflow.org/">MLflow</a> as separate microservices
+            that can be accessed from the browser.
+            <br />
+            <br />
+            <b>Label Studio</b> is connected to the S3 bucket of pre-processed
+            images and the current version of the model. When a member of the
+            GrabRentals team opens the annotation project, it will auto-annotate
+            the images based on the predictions made by the current version of
+            the model. The user can then adjust these labels accordingly and
+            send the updated annotations to re-train the model.
+            <br />
+            <br />
+            Using <b>MLFlow</b>, the user can view all versions of the model and
+            their accuracy score against a dedicated "test set" of MCs. They
+            will then be able to choose the best version to deploy for
+            production use.
+            <br />
+            <br />
+            With this active learning pipeline, we intend to make continued
+            maintenance of this tool easier and more flexible for our sponsors,
+            even past the duration of our involvement in the project.
+          </p>
+          <img
+            src="img/mot_active_learning_architecture.png"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Conclusions</h2>
+          <p class="text">
+            Although the requirement of the final year project was to create a
+            proof-of-concept, we strived to create a tool that can benefit our
+            sponsors in their processes. As such, this project was more
+            challenging than our general school projects, where we had clear-cut
+            deliverables already set by our professors. This was the first time
+            I worked on a project with minimal guidance, where we were at the
+            forefront of the stakeholder management. We had to independently
+            communicate with our sponsors, clarifying requirements and keeping
+            them updated on our progress. I am thankful that the team at
+            GrabRentals has been nothing but supportive throughout this entire
+            journey, being very responsive to our inquiries and providing us
+            with the resources we need.
+            <br />
+            <br />
+            Although the obligations of the final year project ended with the
+            final presentation of the proof-of-concept at the end of the school
+            term, we still felt responsible about delivering value to our
+            sponsors. As such, we took a whole month after the end of the term
+            to integrate the project to the sponsors' existing system.
+            <br />
+            <br />
+            It was one of the most challenging projects I had embarked on up to
+            the date of writing this page, but I am very grateful for the
+            opportunity and lessons learned!
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/timeline.js"></script>
+  </body>
+</html>
