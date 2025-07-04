@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio | LuxChain</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/484a923a64.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><i class="fa fa-house"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarLinks"
+            aria-controls="navbarLinks"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon">
+              <i class="fa fa-bars"></i>
+            </span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarLinks"
+          >
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-me.html">about me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#works">works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact-me">contact me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="hero-img"
+      style="--src: url('../img/luxchain_mockup.png'); --bg-x: 50%; --bg-y: 55%"
+    ></div>
+    <div class="d-flex align-items-center py-5 flex-column">
+      <h1>LuxChain</h1>
+      <p style="color: white">SMU MITB IS627 2024 Project</p>
+    </div>
+    <div class="container timeline">
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Background</h2>
+          <p class="text">
+            The luxury goods market has seen significant growth due to rise of
+            demand for high-end products worldwide. Consumers seek prestige and
+            authenticity, but this has led to an increase in counterfeit goods.
+            This rampant counterfeiting not only erodes brand revenues but also
+            inflates operational costs as companies work to protect product
+            authenticity, ultimately undermining consumer trust and brand
+            equity. Despite regulatory changes and enhanced customs enforcement,
+            counterfeiters continue to exploit system loopholes, particularly
+            through online marketplaces, which account for around 31% of
+            counterfeit sales. The growing online demand for luxury goods at
+            lower prices has intensified these challenges, placing a financial
+            strain on brands while diluting their market presence.
+            <br />
+            <br />
+            Due to the decentralized, transparent, and immutable nature of
+            blockchain, we saw an opportunity to utilize it to keep tamper-proof
+            records of the lifecycle of a product. we propose a traceability
+            system <b>LuxChain</b> for protecting against luxury counterfeits
+            leveraging on a series of smart contracts.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Solution Overview</h2>
+          <p class="text">
+            In LuxChain, <b>Ethereum</b> is used as the smart contract platform
+            to develop an anti-counterfeit system that can be accessed by
+            manufacturers, retailers, logistics providers, regulators, and
+            consumers. It records the ownership of assets as it circulates in
+            the market, proving its authenticity through traceability. This is
+            done by issuing a <b>Digital Passport</b> alongside a physical
+            product.
+          </p>
+          <img src="img/luxchain_solution_overview.png" style="width: 100%" />
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>User Flow</h2>
+          <p class="text">
+            Firstly, manufacturers create a unique digital ID for each luxury
+            product based on a unique QR code or NFC, and information of each
+            item is stored on the blockchain. This ID is available for anyone in
+            the LuxChain blockchain to access and use to trace relevant
+            information about the product and its ownership at point of sales
+            for verification purpose. During a luxury goods transaction, the
+            verification of authenticity can be done by matching the seller's
+            wallet address to the owner's wallet address stored on the
+            blockchain. Transfer of ownership for the digital identity using a
+            smart contract can only be initiated by the owner's wallet.
+            Consumers or buyers in the secondary marketplace will receive the
+            new product ownership only if the current owner address and the
+            product ID is the same as the ones recorded on the blockchain.
+          </p>
+          <img src="img/luxchain_user_flow.png" style="width: 100%" />
+        </div>
+      </div>
+      <div class="timeline-box right">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Prototype</h2>
+          <p class="text">
+            The prototype is built using <b>React</b>. <b>web3.js</b> connects
+            it to a series of smart contracts written in <b>Solidity</b> and
+            deployed in the <b>Sepolia Ethereum TestNet</b>. The metadata of
+            digital assets are stored using <b>Pinata IPFS client</b>. The code
+            can be found in the following
+            <a href="https://github.com/Jenpoer/luxchain-react-app"
+              >Github repo.</a
+            >
+          </p>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zoQ-2BSkikw?si=dFb0kwpwQxSGO93B"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="timeline-box left">
+        <div class="marker">
+          <span class="icon-sakura_icon"></span>
+        </div>
+        <div class="timeline-content">
+          <h2>Conclusions</h2>
+          <p class="text">
+            This project was my first foray into Blockchain technology and I
+            learned a lot through the course about its potential business use
+            cases. The concepts of a dApp was surprisingly not too different
+            from normal software engineering, once you get into the mindset that
+            Blockchain essentially functions as a decentralized, immutable
+            database. However, because of that immutability, there are some
+            aspects to consider about deployment and data validation that are
+            different from a normal application.
+            <br />
+            <br />
+            Personally, had I been given more time for the project, I think that
+            a public blockchain like Ethereum might not be the best choice for
+            LuxChain. Ideally, LuxChain should be deployed using a permissioned
+            blockchain like <b>Hyperledger Besu</b>, where it can be governed by
+            validated manufacturing brands and roles can be assigned to
+            different stakeholders in the system. Additionally, a lighter
+            consensus mechanism like
+            <b
+              >Proof of Authority using QBFT (Quorum Byzantine Fault
+              Tolerance)</b
+            >
+            can be used instead of a public blockchain's <b>Proof of Work</b>,
+            saving costs on gas fees and compute.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/timeline.js"></script>
+  </body>
+</html>
